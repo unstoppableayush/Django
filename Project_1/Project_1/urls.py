@@ -20,7 +20,9 @@ from Project_1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+     # static urls
     path('about-us/',views.aboutus),
     path('course/',views.course)
+   
     
 ]

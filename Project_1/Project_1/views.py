@@ -5,5 +5,5 @@ def aboutus(request):
 
 def course(request):
     return HttpResponse("This is Course")
-
+    
 
