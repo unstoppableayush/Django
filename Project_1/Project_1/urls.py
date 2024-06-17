@@ -22,10 +22,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
      # static urls
     path('about-us/',views.aboutus),
-    path('about/',views.about),
+    path('about/',views.about, name="about"),
     path('course/',views.course),
     path('course/<courseid>',views.courseDetails),
-     path('',views.homePage),
-     path('contact/',views.contact),
+     path('',views.homePage, name="home"),
+     path('contact/',views.contact, name="contact"),
     
 ]
