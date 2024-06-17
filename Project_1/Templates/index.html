@@ -7,7 +7,8 @@
     <title>Welcome</title>
 </head>
 <body>
- {%  include "header.html" %}
+{%  extends "base.html"  %}
+{% block content %}
 
     <h1>{{title}}</h1>
 
@@ -39,8 +40,8 @@
             <div>No Data Found</div>
     {% endif %}
 
+{% endblock %}
 
-{% include "footer.html" %}
 
 </body>
 </html>
