@@ -27,5 +27,6 @@ urlpatterns = [
     path('course/<courseid>',views.courseDetails),
      path('',views.homePage, name="home"),
      path('contact/',views.contact, name="contact"),
+     path('form/',views.form),
     
 ]

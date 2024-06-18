@@ -27,3 +27,17 @@ def about(request):
 
 def contact(request):
     return render(request, "contact.html")
+
+def form(request):
+    return render(request, "form.html")
+
+def form(request):
+    output = ""
+    try:
+        fn = request.GET['fname'],
+        ln = request.GET['lname'],
+        em = request.GET.get('email')
+        output = fn
+    except:
+        pass
+    return render(request , 'form.html', {'output':output})

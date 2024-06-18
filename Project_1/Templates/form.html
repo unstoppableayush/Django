@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foem</title>
+    <link rel="stylesheet" href="{% static 'CSS/index.csss' %}" />
+    <style>
+       .pt{
+            padding: top 60px;
+        }
+    </style>
+</head>
+<body>
+    {% include "header.html" %}
+    <form action="" method="get">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname">
+        <br>
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" name="email">
+        <br>
+        <button type="submit" class="pt">Submit</button>
+        <br>
+        <br>
+        <input type="text" value= "{{output}}">
+    </form>
+</body>
+</html>
