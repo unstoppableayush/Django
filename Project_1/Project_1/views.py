@@ -34,10 +34,13 @@ def form(request):
 def form(request):
     output = ""
     try:
-        fn = request.GET['fname'],
-        ln = request.GET['lname'],
-        em = request.GET.get('email')
-        output = fn
+        # fn = request.GET['fname'],
+        # ln = request.GET['lname'],
+        # em = request.GET.get('email')
+        fn = request.POST['fname'],
+        ln = request.POST['lname'],
+        em = request.POST.get('email')
+        output = str(fn)+str(ln)+str(em)
     except:
         pass
     return render(request , 'form.html', {'output':output})
