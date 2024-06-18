@@ -49,3 +49,15 @@ def form(request):
     except:
         pass
     return render(request , 'form.html', {'output':output})
+
+def submitform(request):
+    try:
+        if request.method=="POST":
+            fn = request.POST.get('fname'),
+            ln = request.POST.get('lname'),
+            em = request.POST.get('email')
+            output = str(fn)+str(ln)+str(em)
+
+            return HttpResponse(output)
+    except:
+        pass

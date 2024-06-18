@@ -25,8 +25,9 @@ urlpatterns = [
     path('about/',views.about, name="about"),
     path('course/',views.course),
     path('course/<courseid>',views.courseDetails),
-     path('',views.homePage, name="home"),
-     path('contact/',views.contact, name="contact"),
-     path('form/',views.form),
+    path('',views.homePage, name="home"),
+    path('contact/',views.contact, name="contact"),
+    path('form/',views.form),
+    path('submitform/',views.submitform, name="submitform" ),
     
 ]
