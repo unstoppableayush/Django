@@ -35,6 +35,33 @@ def contact(request):
 def form(request):
     return render(request, "form.html")
 
+def marksheet(request):
+    if request.method == "POST":
+        s1=eval(request.POST.get('subject1'))
+        s2=eval(request.POST.get('subject2'))
+        s3=eval(request.POST.get('subject3'))
+        s4=eval(request.POST.get('subject4'))
+        s5=eval(request.POST.get('subject5'))
+        t=s1+s2+s3+s4+s5
+        p=t*100/500
+        if p>=60:
+            d="First Div"
+        elif p>=40:
+            d="Second Div"
+        elif p>=35:
+            d="Third Div"
+        else:
+            d="Fail"
+        #dicitonary
+        data={
+            'total':t,
+            'per':p,
+            'div':d
+        }
+
+        return render(request, "marksheet.html", data)
+    return render(request, "marksheet.html")
+
 def calculator(request):
     c = ''
     try:
