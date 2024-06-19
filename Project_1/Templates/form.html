@@ -16,7 +16,7 @@
     {% include "header.html" %}
     <form action="{% url "submitform" %}" method="post">
         {% csrf_token %}
-        <label for="fname">First Name:</label>
+        {% comment %} <label for="fname">First Name:</label>
         <input type="text" name="fname">
         <br>
         <label for="lname">Last Name:</label>
@@ -25,8 +25,12 @@
         <label for="email">Email:</label>
         <input type="email" name="email">
         <br>
+        {% endcomment %}
+        
+        {{form}}
+
         <button type="submit" class="pt">Submit</button>
-        <br>
+        <br>       
         <br>
         <input type="text" value= "{{output}}">
     </form>

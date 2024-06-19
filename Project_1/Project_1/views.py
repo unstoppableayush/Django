@@ -1,5 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from .forms import usersForm
+
 def aboutus(request):
     return HttpResponse("Hello World")
 
@@ -35,6 +37,9 @@ def form(request):
 
 def form(request):
     output = ""
+    fm=usersForm()
+
+    data={'form':fm}
     try:
         # fn = request.GET['fname'],
         # ln = request.GET['lname'],
@@ -43,12 +48,16 @@ def form(request):
         ln = request.POST['lname'],
         em = request.POST.get('email')
         output = str(fn)+str(ln)+str(em)
+        data = {
+            'form':fm,
+            'output':output
+        }
 
         url = "/about/?output={}".format
         return HttpResponseRedirect('/about', url)
     except:
         pass
-    return render(request , 'form.html', {'output':output})
+    return render(request , 'form.html', data)
 
 def submitform(request):
     try:
