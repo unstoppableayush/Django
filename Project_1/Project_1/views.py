@@ -55,6 +55,20 @@ def calculator(request):
     print(c)
     return render(request, "calculator.html" , { 'c': c})
 
+def evenodd(request):
+    c=''
+    try:
+        if request.method=="POST":
+            n=eval(request.POST.get('num'))
+            if n%2 == 0 :
+                c='Even'
+            else:
+                c='Odd'
+    except:
+        c="Enter valid no."
+    
+    return render(request, "evenodd.html", { 'c': c} )
+
 def form(request):
     output = ""
     fm=usersForm()
