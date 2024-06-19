@@ -29,5 +29,5 @@ urlpatterns = [
     path('contact/',views.contact, name="contact"),
     path('form/',views.form),
     path('submitform/',views.submitform, name="submitform" ),
-    
+    path('calculator/', views.calculator)
 ]
