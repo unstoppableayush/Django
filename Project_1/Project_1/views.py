@@ -86,6 +86,8 @@ def evenodd(request):
     c=''
     try:
         if request.method=="POST":
+            if  request.POST.get('num')=="":
+                return render(request, "evenodd.html",{'error':True} )
             n=eval(request.POST.get('num'))
             if n%2 == 0 :
                 c='Even'
