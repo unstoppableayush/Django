@@ -4,6 +4,7 @@ from .forms import usersForm
 from django.core.mail import send_mail, EmailMultiAlternatives
 import os
 from django.conf import settings
+from service.models import Service
 
 def aboutus(request):
     return HttpResponse("Hello World")
@@ -156,3 +157,8 @@ def sendmail(request):
     #     fail_silently=False
     # )
     return HttpResponse("Email Sent")
+
+def services(request):
+    services = Service.objects.all()
+    print(services)
+    return render(request, 'services.html', {'services': services})

@@ -32,5 +32,6 @@ urlpatterns = [
     path('calculator/', views.calculator),
     path('evenodd/', views.evenodd),
     path('marksheet', views.marksheet),
-    path('sendmail', views.sendmail)
+    path('sendmail', views.sendmail),
+    path('services/', views.services, ),
 ]
