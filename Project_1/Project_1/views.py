@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import usersForm
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
 
 def aboutus(request):
     return HttpResponse("Hello World")
@@ -136,11 +136,19 @@ def submitform(request):
         pass
 
 def sendmail(request):
-    send_mail(
-        'Testing Mail',
-        'Here is the message',
-        'ayushkum884@gmail.com',
-        ['ayushkum012@gmail.com'],
-        fail_silently=False
-    )
+    subject = 'Test Email'
+    from_email = 'ayushkum884@gmail.com'
+    msg  = '<h1>This is test email</h1>'
+    to = ['ayushkum012@gmail.com']
+    msg = EmailMultiAlternatives(subject, msg, from_email, to) 
+    msg.content_subtype='html'
+    msg.send()
     return HttpResponse("Email Sent");
+
+    # send_mail(
+    #     'Testing Mail',
+    #     'Here is the message',
+    #     'ayushkum884@gmail.com',
+    #     ['ayushkum012@gmail.com'],
+    #     fail_silently=False
+    # )

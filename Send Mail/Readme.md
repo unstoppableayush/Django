@@ -1,7 +1,5 @@
 # Sending Email in Django Project 
 
-
-
 > views.py
 
 `from django.core.mail import send_mail`
