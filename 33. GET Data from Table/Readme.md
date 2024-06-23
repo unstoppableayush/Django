@@ -1,4 +1,4 @@
-# Get Data from Table in Django | Objects All () 
+## Get Data from Table in Django | Objects All () 
 
 > views.py
 
@@ -24,3 +24,12 @@ def services(request):
     {% endfor %}
 </body>
 ```
+
+## order a Query in Ascending or Descending
+
+- `order_by()` - used to define the order.
+    - Ex: `services = Service.objects.all().order_by('service_title')`
+
+- `-` is used to do descending in order. 
+    - Ex: `services = Service.objects.all().order_by('-service_title')`
+- By default order is asceding.

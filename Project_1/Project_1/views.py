@@ -159,6 +159,6 @@ def sendmail(request):
     return HttpResponse("Email Sent")
 
 def services(request):
-    services = Service.objects.all()
+    services = Service.objects.all().order_by('-service_title')
     print(services)
     return render(request, 'services.html', {'services': services})
