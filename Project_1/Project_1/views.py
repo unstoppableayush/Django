@@ -2,6 +2,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import usersForm
 from django.core.mail import send_mail, EmailMultiAlternatives
+import os
+from django.conf import settings
 
 def aboutus(request):
     return HttpResponse("Hello World")
@@ -141,10 +143,11 @@ def sendmail(request):
     msg  = '<h1>This is test email</h1>'
     to = ['ayushkum012@gmail.com']
     msg = EmailMultiAlternatives(subject, msg, from_email, to) 
+    file_path = os.path.join(settings.BASE_DIR, 'Static/images/neuralink.jpg')
+    print(file_path)
+    msg.attach_file(file_path, 'image/jpg')
     msg.content_subtype='html'
     msg.send()
-    return HttpResponse("Email Sent");
-
     # send_mail(
     #     'Testing Mail',
     #     'Here is the message',
@@ -152,3 +155,4 @@ def sendmail(request):
     #     ['ayushkum012@gmail.com'],
     #     fail_silently=False
     # )
+    return HttpResponse("Email Sent")
