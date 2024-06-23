@@ -33,3 +33,11 @@ def services(request):
 - `-` is used to do descending in order. 
     - Ex: `services = Service.objects.all().order_by('-service_title')`
 - By default order is asceding.
+
+## Limiting Query Results in Django
+
+- `[:a]` - Show the data from `0` index to less than `a`.
+-  services = Service.objects.all().order_by('-service_title')[:2]
+    - Show the data of index `0` and `1`
+- services = Service.objects.all().order_by('-service_title')[1:2]
+    - show the data from `1` to less than 2 i.e `1`
