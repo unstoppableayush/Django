@@ -8,7 +8,7 @@
 <body>
     {% include "header.html" %}
     {% for n in services %}
-    <h1> {{n.service_icon}} | {{n.service_title}} | {{n.service_des}}  </h1>
+    <h1> {{n.service_icon | upper }} | {{n.service_title | safe }} | {{n.service_des | safe }}  </h1>
     {% endfor %}
 </body>
 </html>
