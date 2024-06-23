@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import usersForm
+from django.core.mail import send_mail
 
 def aboutus(request):
     return HttpResponse("Hello World")
@@ -133,3 +134,13 @@ def submitform(request):
             return HttpResponse(output)
     except:
         pass
+
+def sendmail(request):
+    send_mail(
+        'Testing Mail',
+        'Here is the message',
+        'ayushkum884@gmail.com',
+        ['ayushkum012@gmail.com'],
+        fail_silently=False
+    )
+    return HttpResponse("Email Sent");
