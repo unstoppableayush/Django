@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'service'
+    'service',
+    'tinymce',
+    'news'
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'ayushkum884@gmail.com'
 EMAIL_HOST_PASSWORD = "jhnlfeeiebdsfxng"
 EMAIL_USE_TLS = True
+
+MEDIA_ROOT = BASE_DIR /'media'
+MEDIA_URL = "/media/"
